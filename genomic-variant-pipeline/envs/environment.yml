@@ -1,0 +1,19 @@
+name: variant-pipeline
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - snakemake-minimal>=8.0
+  - bwa=0.7.*
+  - samtools>=1.19
+  - bcftools>=1.19
+  - fastp>=0.23
+  - fastqc>=0.12
+  - multiqc>=1.21
+  - gatk4>=4.5          # best-practices caller path (HaplotypeCaller/GenotypeGVCFs)
+  - snpeff>=5.2          # optional annotation path (opt-in, see annotate.smk)
+  - pysam>=0.22
+  - pyyaml>=6.0
+  - pytest>=8.0

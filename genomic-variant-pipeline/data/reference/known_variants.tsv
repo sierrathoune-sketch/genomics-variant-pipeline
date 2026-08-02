@@ -1,0 +1,17 @@
+chrom	pos	ref	alt	type
+sim_ref	150	C	A	SNP
+sim_ref	450	G	C	SNP
+sim_ref	750	T	A	SNP
+sim_ref	1050	A	G	SNP
+sim_ref	1350	AG	A	DEL
+sim_ref	1650	C	G	SNP
+sim_ref	1950	T	G	SNP
+sim_ref	2250	A	T	SNP
+sim_ref	2550	C	A	SNP
+sim_ref	2850	G	GTC	INS
+sim_ref	3150	C	T	SNP
+sim_ref	3450	T	A	SNP
+sim_ref	3750	G	C	SNP
+sim_ref	4050	T	G	SNP
+sim_ref	4350	GG	G	DEL
+sim_ref	4650	T	C	SNP

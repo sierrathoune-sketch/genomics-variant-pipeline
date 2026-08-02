@@ -1,0 +1,2 @@
+Module	Section	Sample Name	Source
+fastp	all_sections	demo	/Users/sierra/Documents/genomic-variant-calling/genomic-variant-pipeline/results/qc/demo_fastp.json

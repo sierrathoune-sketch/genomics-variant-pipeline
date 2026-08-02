@@ -1,0 +1,26 @@
+configfile: "config/config.yaml"
+
+SAMPLES = list(config["samples"].keys())
+
+# Without this, "results/variants/gatk/demo.raw.vcf.gz" is ambiguous between
+# call_variants_bcftools's {sample}.raw.vcf.gz (sample="gatk/demo") and
+# genotype_gvcfs's gatk/{sample}.raw.vcf.gz (sample="demo") — wildcards allow
+# "/" by default. Constrain {sample} to a single path component everywhere.
+wildcard_constraints:
+    sample="[^/]+",
+
+include: "workflow/rules/simulate.smk"
+include: "workflow/rules/qc.smk"
+include: "workflow/rules/align.smk"
+include: "workflow/rules/call.smk"
+include: "workflow/rules/annotate.smk"
+
+
+rule all:
+    # Default target: QC + the fast bcftools calling path, per-sample,
+    # plus a MultiQC roll-up. GATK best-practices and SnpEff annotation are
+    # available as explicit opt-in targets (see README "Two calling paths").
+    input:
+        expand("results/qc/{sample}_fastp.html", sample=SAMPLES),
+        expand("results/variants/{sample}.filtered.vcf.gz", sample=SAMPLES),
+        "results/multiqc/multiqc_report.html",

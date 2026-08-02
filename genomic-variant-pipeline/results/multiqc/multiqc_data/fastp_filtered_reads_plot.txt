@@ -1,0 +1,2 @@
+Sample	Passed Filter	Low Quality	Too Many N	Low Complexity	Too Short	Too Long
+demo	1000.0	0.0	0.0	nan	0.0	0.0
